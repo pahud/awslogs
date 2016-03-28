@@ -1,4 +1,4 @@
-## AWS Cloudwatch Log agent for Docker
+## AWS CloudWatch Logs agent for Docker
 
 This is the Docker image for [AWS CloudWatch Logs agent](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AgentReference.html) for AWS ECS.
 
