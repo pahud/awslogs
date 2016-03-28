@@ -9,7 +9,7 @@
       "mountPoints": [
           {
               "sourceVolume": "nginxlog", 
-              "containerPath": "/var/log/nginx", 
+              "containerPath": "/opt/openresty/nginx/logs", 
               "readOnly": false
           }
       ], 
