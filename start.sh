@@ -11,6 +11,13 @@ trap shutdown_awslogs INT TERM HUP
 
 cp -f /root/awslogs.conf.dummy /var/awslogs/etc/awslogs.conf
 
+cat > /var/awslogs/etc/aws.conf <<EOF
+[plugins]
+cwlogs = cwlogs
+[default]
+region = ${REGION}
+EOF
+
 
 /var/awslogs/bin/awslogs-agent-launcher.sh &
 

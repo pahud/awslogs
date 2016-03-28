@@ -1,8 +1,6 @@
 #!/bin/sh
 
-PWD=`pwd`
-BASE_NAME="${PWD##*/}"
-IMAGE_NAME="${BASE_NAME#*-}"
+IMAGE_NAME="pahud/awslogs"
 
 
 docker build  -t  ${IMAGE_NAME} .

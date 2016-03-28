@@ -26,6 +26,12 @@
       "image": "pahud/awslogs",
       "cpu": 0,
       "memory": 128,
+      "environment": [
+                    {
+                        "name": "REGION",
+                        "value": "us-west-2"
+                    }
+                ],
       "essential": true,
       "mountPoints": [
           {
