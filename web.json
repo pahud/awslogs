@@ -1,0 +1,49 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "nginx",
+      "image": "pahud/openresty",
+      "cpu": 0,
+      "memory": 128,
+      "essential": true,
+      "mountPoints": [
+          {
+              "sourceVolume": "nginxlog", 
+              "containerPath": "/var/log/nginx", 
+              "readOnly": false
+          }
+      ], 
+      "portMappings": [
+          {
+              "containerPort": 80, 
+              "hostPort": 8899, 
+              "protocol": "tcp"
+          }
+      ] 
+    },
+    {
+      "name": "awslogs",
+      "image": "pahud/awslogs",
+      "cpu": 0,
+      "memory": 128,
+      "essential": true,
+      "mountPoints": [
+          {
+              "sourceVolume": "nginxlog", 
+              "containerPath": "/var/log/nginx", 
+              "readOnly": false
+          }
+      ] 
+    }
+  ],
+  "volumes": [
+        {
+            "name": "nginxlog", 
+            "host": {
+                "sourcePath": "/var/log/nginx"
+            }
+        }
+  ],
+
+  "family": "web"
+}
