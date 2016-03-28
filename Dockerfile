@@ -2,7 +2,7 @@ FROM debian:jessie
 
 MAINTAINER pahudnet@gmail.com
 
-RUN apt-get update && apt-get -u upgrade
+RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -q -y python python-pip wget
 RUN cd / ; wget https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py
 
